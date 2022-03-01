@@ -1,0 +1,58 @@
+
+nav,div,li,a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+.nav{
+    width:100% !important;
+    background-color: rgb(204, 188, 219);
+    padding: 10px;
+    display: flex;
+  
+    
+}
+.menu{
+    display: flex;
+    margin-left: 800px;
+    gap: 10px !important;
+}
+.nav,div{
+    display: flex;
+}
+.section1,.section2{
+    border: 1px solid black;
+}
+.section2{
+    height: 380px;
+    padding: 10px;
+}
+.header{
+    gap: 10px !important;
+    margin: 10px;
+  
+}
+footer{
+    background-color: rgb(204, 188, 219);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.cards{
+gap: 10px;
+margin: 10px;
+}
+.cards1{
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 2px 0px 2px 0px ;
+ background: linear-gradient(to bottom, white 50%, rgb(230, 223, 223) 50%);
+    
+}
+.footer2{
+    gap: 30px;
+    margin-right: 300px;
+}

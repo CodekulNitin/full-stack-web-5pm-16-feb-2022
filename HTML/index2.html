@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Page</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h2>Hello</h2>
+    <h3>Hello</h3>
+    <h4>Hello</h4>
+    <h5>Hello</h1>
+    <h6>Hello</h6>
+    <audio controls>
+        <source src="song.ogg" type="audio/ogg"> 
+        <source src="song.mp3" type="audio/mpeg">
+        bsbb
+    </audio>
+    <video height="300" width="300" controls>
+        <source src="Janani - RRR Video Song_HD-(HDvideo9).mp4" type="video/mp4">
+
+    </video>
+    <iframe src="index.html" frameborder="3"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4d8m59ct2wQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>Lorem <b><em>jsfhgaf</em></b>ipsum <i><strong>mnm</strong></i> <br>dolor sit amet consectetur, adipisicing elit. Eos nobis numquam enim voluptates fugiat. Ducimus, fugit laudantium iste molestiae soluta doloribus nam omnis cum dolor earum tempora itaque et inventore reprehenderit eius ex optio quia assumenda ad. Officiis voluptates debitis veniam harum soluta corporis odit.</p>
+    <img src="https://cdn.pixabay.com/photo/2021/08/04/11/58/kids-6521604_960_720.jpg" height="200" width="200" alt="hbsdb">
+    <nav>
+        <a href="http://www.google.com">Home</a>
+        <a href="">About us</a>
+        <a href="">Contact us</a>
+        <a href=""><button>Login</button></a>
+    </nav>
+<script>
+    var emailRegex = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+
+let users = [
+  {
+"email":"trupti@gmail.com",
+"salary": 0
+},
+{
+"email":"abc.com",
+"salary":0
+}
+];
+let result = true;
+
+for (let i = 0; i < users.length; i++) { 
+  console.log(users[i].email);
+  if(users[i].email.match(emailRegex))
+  {
+      users[i].salary=5000
+    console.log("valid")
+  }else{
+    users[i].salary=0
+    console.log("envalid")
+  }
+}
+console.log(users);
+    </script>
+</body>
+</html>
