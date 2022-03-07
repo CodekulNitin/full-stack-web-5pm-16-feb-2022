@@ -37,10 +37,17 @@
 
 let users = [
   {
+    "id":1,
 "email":"trupti@gmail.com",
 "salary": 0
 },
 {
+  "id":2,
+"email":"xyz@gmail.com",
+"salary":0
+},
+{
+  "id":3,
 "email":"abc.com",
 "salary":0
 }
@@ -51,12 +58,15 @@ for (let i = 0; i < users.length; i++) {
   console.log(users[i].email);
   if(users[i].email.match(emailRegex))
   {
-      users[i].salary=5000
+    var sal = prompt("Enter salary for "+users[i].email)
+      users[i].salary=sal 
     console.log("valid")
-  }else{
+  }   else{
+  alert(`${users[i].email} is not valid email id`)
     users[i].salary=0
-    console.log("envalid")
+    console.log("invalid")
   }
+
 }
 console.log(users);
     </script>
