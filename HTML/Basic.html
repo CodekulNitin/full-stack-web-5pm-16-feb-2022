@@ -322,3 +322,239 @@ export default function ControlledAccordions() {
     </div>
   );
 } -->
+
+<!-- Add Profile -->
+<!-- import { TextField } from "@mui/material";
+import { remove } from "lodash";
+import React, { useState } from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+
+export default function AddCourses() {
+  const [inputList, setInputList] = useState([{}]);
+  const [fields, setFields] = useState([{ value: null }]);
+
+  //print data input list
+  const [topics, setTopics] = useState(null);
+  const [data, setData] = useState(null);
+  const [duration, setDuration] = useState(null);
+  const [fees, setFees] = useState(null);
+  const [subTopics, setSubTopics] = useState(null);
+  const [edit, setEdit] = useState(false);
+  const [value, setValue] = useState("Add");
+  const [open, setOpen] = useState(false);
+
+  const [print, setPrint] = useState(false);
+  function getData(val) {
+    setData(val.target.value);
+    setPrint(false);
+    console.log(val.target.value);
+  }
+  function getTopics(val) {
+    setTopics(val.target.value);
+    setPrint(false);
+    console.log(val.target.value);
+  }
+  function getDuration(val) {
+    setDuration(val.target.value);
+    setPrint(false);
+    console.log(val.target.value);
+  }
+  function getFees(val) {
+    setFees(val.target.value);
+    setPrint(false);
+    console.log(val.target.value);
+  }
+  function getsubTopics(val) {
+    setSubTopics(val.target.value);
+    setPrint(false);
+    console.log(val.target.value);
+  }
+
+  // handle input change
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...inputList];
+    // list[index][name] = value;
+    setInputList(list);
+  };
+
+  // handle click event of the Remove subtoppic textfield
+  const handleRemoveClick = (index) => {
+    const list = [...inputList];
+    list.splice(index, 1);
+    setInputList(list);
+  };
+
+  // handle click event of the Add button add subtopic textfield
+  const handleAddClick = () => {
+    setInputList([...inputList, { subtopics: "" }]);
+  };
+
+  // add topics and sub-topics
+
+  //handle add topic and sub topics
+  // const handleAddTopics = (e, index) => {
+  //   const openAddTopics = [...openAddTopics];
+  //   setOpenAddTopics(openAddTopics);
+  // };
+  //handle click event of the remove button for Remove Courses
+
+  // const handleClickRemove = (index) => {
+  //   const openAddTopics = [...openAddTopics];
+  //   openAddTopics.splice(index, 1);
+  //   setOpenAddTopics(openAddTopics);
+  // };
+
+  // handle click to addTopics
+  // const handleClickAdd = () => {
+  //   setOpenAddTopics([...openAddTopics, { topics: "" }]);
+  // };
+
+  // handle Remove And Edit -->
+
+  <!-- const handleEdit = () => {
+    setEdit(true);
+  };
+  const handleRemove = () => {
+    setEdit(false);
+    console.log("hello");
+  };
+  const handleSave = (val) => {
+    setValue(val);
+    setEdit(false);
+  }; -->
+
+  <!-- return (
+    <div className="border rounded-lg shadow-base p-4 lg:mx-36">
+      <h1 className=" text-left text-bluesh  text-3xl py-3">Add Course</h1>
+      <TextField
+        fullWidth
+        label="Course Title"
+        onChange={getData}
+        saveText={handleSave}
+        cancelEdit={handleRemove}
+      />
+      <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <TextField
+            label="Topics"
+            saveText={handleSave}
+            cancelEdit={handleRemove}
+            onChange={getTopics}
+          />
+          <TextField
+            label="Duration/Hrs"
+            saveText={handleSave}
+            cancelEdit={handleRemove}
+            onChange={getDuration}
+          />
+          <TextField
+            label="Fees/Charges"
+            saveText={handleSave}
+            cancelEdit={handleRemove}
+            onChange={getFees}
+          />
+        </div>
+        <div className="text-left mt-1 w-full">
+          {inputList.map((x, i) => {
+            return (
+              <div className="items-center flex space-x-2  ">
+                <TextField
+                  fullWidth
+                  className="mt-4"
+                  label="SubTopics"
+                  saveText={handleSave}
+                  cancelEdit={handleRemove}
+                  value={x.subtopics}
+                  onChange={(e) => {
+                    handleInputChange(e, i);
+                    // getsubTopics(true);
+                  }}
+                />
+
+                <div className="btn-box flex space-x-2 mt-4">
+                  {inputList.length - 1 === i && (
+                    <button
+                      className="h-14 w-14 rounded-lg border text-2xl"
+                      onClick={() => {
+                        handleAddClick(i);
+                      }}
+                    >
+                      +
+                    </button>
+                  )}
+                  {inputList.length !== 1 && (
+                    <button
+                      className="h-14 w-14 rounded-lg border text-2xl"
+                      onClick={() => handleRemoveClick(i)}
+                    >
+                      -
+                    </button>
+                  )}
+                </div>
+              </div>
+                 <div className="flex justify-center">
+                 <button
+                   onClick={() => {
+                     setPrint(true);
+                     handleEdit();
+                   }}
+                   className="p-2 bg-bluesh text-white px-5 rounded-md mt-5"
+                 >
+                   Add
+                 </button>
+               </div>
+            );
+          })}
+
+          {!edit ? (
+         <p></p>
+          ) : (
+            <div className="grid space-x-5 mt-3 p-2  items-center border rounded">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl text-bluesh">Tags:</h1>
+                </div>
+                <div className="flex space-x-4">
+                  <button onClick={handleEdit}>
+                    <EditIcon className="text-bluesh" />
+                  </button>
+                  <button onClick={handleRemove}>
+                    <DeleteIcon className="text-bluesh" />
+                  </button>
+                </div>
+              </div>
+
+              {print ? (
+                <h1 className="p-2 text-lg flex items-center ">
+                  Course Title :<span className="ml-2">{data}</span>
+                </h1>
+              ) : null}
+              {print ? (
+                <h1 className="p-2 text-lg">
+                  Topic Name : <span className="ml-2">{topics}</span>
+                </h1>
+              ) : null}
+              {print ? (
+                <h1 className="p-2 text-lg">
+                  Duration : <span className="ml-2">{duration}</span>
+                </h1>
+              ) : null}
+              {print ? (
+                <h1 className="p-2 text-lg">
+                  Fees : <span className="ml-2">{fees}</span>
+                </h1>
+              ) : null}
+              {print ? (
+                <h1 className="p-2 text-lg">
+                  Sub-Topics : <span className="ml-2">{subTopics}</span>
+                </h1>
+              ) : null}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+} -->
