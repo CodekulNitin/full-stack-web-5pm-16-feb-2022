@@ -1,0 +1,65 @@
+nav li a {
+  display: flex;
+  gap: 10px;
+  padding: 50px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(65, 63, 63);
+}
+.container {
+  background-color: rgb(65, 63, 63);
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  display: flex;
+  gap: 400px;
+}
+.block1 {
+  color: white;
+  position: relative;
+  top: 100px;
+  left: 200px;
+}
+.section1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 60px;
+}
+.p1 {
+  font-size: large;
+  width: 600px;
+}
+.btn1 {
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #e1f000;
+}
+.btn2 {
+  padding: 15px;
+  border-radius: 5px;
+}
+.block2 {
+    margin-top: 100px;
+
+}
+.card1 {
+
+  height: 340px;
+  width: 600px;
+  border-radius: 10px;
+  transform: rotate(20deg);
+  position: relative;
+  z-index: 1000;
+  background:linear-gradient(to bottom,#e1f000 50%, black 50%);
+}
+.card2 {
+
+  height: 340px;
+  width: 600px;
+  border-radius: 10px;
+  transform: rotate(-10deg);
+  background-color: aqua;
+}
