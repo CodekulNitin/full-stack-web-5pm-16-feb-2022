@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .circle-wrap {
+        margin: 150px auto;
+        width: 150px;
+        height: 150px;
+        background: #fefcff;
+        border-radius: 50%;
+        border: 1px solid #cdcbd0;
+      }
+
+      .circle-wrap .circle .mask,
+      .circle-wrap .circle .fill {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .circle-wrap .circle .mask {
+        clip: rect(0px, 150px, 150px, 75px);
+      }
+
+      .circle-wrap .inside-circle {
+        width: 122px;
+        height: 122px;
+        border-radius: 50%;
+        background: #d2eaf1;
+        line-height: 120px;
+        text-align: center;
+        margin-top: 14px;
+        margin-left: 14px;
+        color: #1e51dc;
+        position: absolute;
+        z-index: 100;
+        font-weight: 700;
+        font-size: 2em;
+      }
+      .mask .fill {
+        clip: rect(0px, 75px, 150px, 0px);
+        background: red;
+      }
+    .mask.full, .circle .fill{
+        /* animation: fill ease-in-out 3s; */
+        transform: rotate(135deg);
+    }
+      @keyframes fill {
+          0%{
+              transform: rotate(0deg);
+          }
+          100%{
+            transform: rotate(135deg);
+
+          }
+      }
+      .circle-wrap1 {
+        margin: 150px auto;
+        width: 150px;
+        height: 150px;
+        background: #fefcff;
+        border-radius: 50%;
+        border: 1px solid #cdcbd0;
+      }
+
+      .circle-wrap1 .circle1 .mask1,
+      .circle-wrap1 .circle1 .fill1 {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .circle-wrap1 .circle1 .mask1 {
+        clip: rect(0px, 150px, 150px, 75px);
+      }
+
+      .circle-wrap1 .inside-circle1 {
+        width: 122px;
+        height: 122px;
+        border-radius: 50%;
+        background: #d2eaf1;
+        line-height: 120px;
+        text-align: center;
+        margin-top: 14px;
+        margin-left: 14px;
+        color: #1e51dc;
+        position: absolute;
+        z-index: 100;
+        font-weight: 700;
+        font-size: 2em;
+      }
+      .mask1 .fill1 {
+        clip: rect(0px, 75px, 160px, 0px);
+        background: rgb(255, 0, 179);
+      }
+    .mask1.full1, .circle1 .fill1{
+        /* animation: fill ease-in-out 3s; */
+        transform: rotate(90deg);
+    }
+      @keyframes fill1 {
+          0%{
+              transform: rotate(0deg);
+          }
+          100%{
+            transform: rotate(90deg);
+
+          }
+      }
+      .circle-wrap2 {
+        margin: 150px auto;
+        width: 150px;
+        height: 150px;
+        background: #fefcff;
+        border-radius: 50%;
+        border: 1px solid #cdcbd0;
+      }
+
+      .circle-wrap2 .circle2 .mask2,
+      .circle-wrap2 .circle2 .fill2 {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .circle-wrap2 .circle2 .mask2 {
+        clip: rect(0px, 150px, 150px, 75px);
+      }
+
+      .circle-wrap2 .inside-circle2 {
+        width: 122px;
+        height: 122px;
+        border-radius: 50%;
+        background: #d2eaf1;
+        line-height: 120px;
+        text-align: center;
+        margin-top: 14px;
+        margin-left: 14px;
+        color: #1e51dc;
+        position: absolute;
+        z-index: 100;
+        font-weight: 700;
+        font-size: 2em;
+      }
+      .mask2 .fill2 {
+        clip: rect(0px, 75px, 170px, 0px);
+        background: rgb(102, 255, 0);
+      }
+    .mask2.full2, .circle2 .fill2{
+        /* animation: fill ease-in-out 3s; */
+        transform: rotate(165deg);
+    }
+      @keyframes fill2 {
+          0%{
+              transform: rotate(0deg);
+          }
+          100%{
+            transform: rotate(175deg);
+
+          }
+      }
+      .container{
+          display: flex;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+    <div class="circle-wrap">
+      <div class="circle">
+        <div class="mask full">
+          <div class="fill"></div>
+        </div>
+        <div class="mask half">
+          <div class="fill"></div>
+        </div>
+        <div class="inside-circle">75%</div>
+      </div>
+    </div>
+    <div class="circle-wrap1">
+        <div class="circle1">
+          <div class="mask1 full1">
+            <div class="fill1"></div>
+          </div>
+          <div class="mask1 half1">
+            <div class="fill1"></div>
+          </div>
+          <div class="inside-circle1">50%</div>
+        </div>
+      </div>
+      <div class="circle-wrap2">
+        <div class="circle2">
+          <div class="mask2 full2">
+            <div class="fill2"></div>
+          </div>
+          <div class="mask2 half2">
+            <div class="fill2"></div>
+          </div>
+          <div class="inside-circle2">95%</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
