@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    //   let firstName = "Jonas";
+    //   firstName = "Abhijit";
+    //   const lastName = "abcd";
+    //   lastName = "efgh";
+    //   console.log(firstName);
+    //   console.log(lastName);
+
+      function factorial(x) {
+        if (x === 0) {
+          return 1;
+        }
+        return x * factorial(x - 1);
+      }
+      console.log(factorial(7));
+
+
+      function testNum(a) {
+        let result;
+        if (a > 0) {
+          result = true;
+        } else {
+          result = false;
+        }
+        return result;
+      }
+
+      console.log(testNum(4));
+    </script>
+  </body>
+</html>
+
+<!-- 1 Numbers : floating point numbers used for for decimals and integers  let age = 23; -->
+<!-- 2 String: Sequence character used for text let firstName:"jonas" -->
+<!-- 3 Boolean : Logical type that can only be true or false used for taking decisions let fullAge = true;  -->
+<!-- 4 Undefined : value taken by a variable that is not yet defined ("empty value") let children; -->
+<!-- 5 Null: Also means 'empty value' -->
+<!-- 6 symbol (es2015): value That is unique and cannot be changed [not usefull for now]  -->
+<!-- 7 BigInt(2020): larger integers than the Numbers type can hold -->

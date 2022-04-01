@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-      function myfunction() {
-        document.getElementById("demo").style.backgroundColor = "red";
-      }
-      // let js ="amezing"
-      // if(js=== "amezing") alert("javascript is fun");
-    </script> 
+
   </head>
   <body>
-    <button onclick="myfunction()">click me</button>
-    <p id="demo">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur,
-      officiis maxime! Aspernatur nulla exercitationem enim facere, possimus aut
-      consequatur alias eum mollitia dolores. Quisquam totam, id vel est libero
-      dolores!
-    </p>
-<!-- 
-let const var es6 -->
 
+    <p id="demo"></p>
+
+    <!-- let const var es6 -->
+
+    <!-- var : it can be declared without initilization
+
+let : it can be declared without initilization
+
+const : it cannot be declared without initilization -->
+
+<script>
+  const a = 5;
+  const b = 3;
+
+  const c = a * b;
+  document.getElementById("demo").innerHTML = c;
+
+</script>
   </body>
 </html>
