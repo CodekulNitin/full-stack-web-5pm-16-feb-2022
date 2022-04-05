@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+      var date = new Date();
+      var hour = date.getHours();
+      var day = date.getDay();
+
+      function isBetween(testNumber, lowerLimit, upperLimit) {
+        return testNumber >= lowerLimit || testNumber <= upperLimit;
+      }
+      var flag = false;
+      if (day === 1 && (isBetween(hour, 4, 5) || isBetween(hour, 8, 23))) {
+        flag = true;
+      }
+      if (
+        isBetween(day, 2, 4) &&
+        (isBetween(hour, 0, 5) || isBetween(hour, 8, 23))
+      ) {
+        flag = true;
+      }
+      if (day === 5 && (isBetween(hour, 0, 5) || isBetween(hour, 8, 21))) {
+        flag = true;
+      }
+      if (
+        day === 6 &&
+        (isBetween(hour, 1, 3) || isBetween(hour, 8, 12) || hour === 16)
+      ) {
+        flag = true;
+      }
+      if (flag) {
+      }
+      console.log(date);
+      console.log(hour);
+      console.log(day);
+
+    //   const day = new Date("april 05,2022 01:15:00");
+    //   let day = day.getDay();
+    //   document.getElementById("demo").innerHTML = day;
+
+      const Weekday = [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thrusday",
+        "friday",
+        "saturday",
+      ];
+      const d = new Date();
+      let days = Weekday[d.getDay()];
+      document.getElementById("demo2").innerHTML = days;
+    </script>
+  </body>
+</html>
