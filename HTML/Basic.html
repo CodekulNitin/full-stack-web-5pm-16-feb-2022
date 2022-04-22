@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <h1 class="text-5xl text-red-700 font-bold underline">Hello world!</h1>
-    <div class="container grid gap-5 md:grid-cols-3 lg:grid-cols-5">
-      <div class="card  border p-12 flex text-5xl md:text-2xl h-full w-11/12 bg-pink-600"> hello</div>
-      <div class="card border p-12"></div>
-      <div class="card border p-12"></div>
-      <div class="card border p-12"></div>
-      <div class="card border p-12"></div>
+</head>
+
+<body>
+    <div class="grid px-32 p-4 shadow  gap-5 mx-44 mt-12 border rounded-lg">
+        <input id="email" class="border h-8 pl-2" type="email" placeholder="email">
+        <input id="password" class="border h-8 pl-2" type="password" placeholder="Password">
+        <div class="flex justify-center">
+            <button class="px-3 p-1 bg-blue-700 text-white rounded w-32" onclick="submitData()">Submit</button>
+        </div>
+        <div>
+            <p id="demo"></p>
+        </div>
     </div>
-  </body>
+    <script>
+        function submitData (){
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+         let obj = JSON.stringify({email:email, password:password})   
+         console.log(obj)
+         document.getElementById("demo").innerHTML = obj;
+        }
+    </script>
+
+</body>
+
 </html>

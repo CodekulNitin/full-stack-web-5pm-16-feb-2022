@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let str ="";
+      //   let y =1;
+      //   for(let i=1;i<y; i++){
+      //       for(let j=1; j< x; j++){
+      //           if( i<=y/2 && j>=(y/2) - (i-1) <= (y/2)+(i-1)){
+      //               str= str.concat("*");
+      //           }else if (i >= y/2
+      //           && j> ((y/2) - i ) * (-1)
+      //           && j < (y-((y/2) -i) * (-1))){
+
+      //           }else {
+      //               str = str.concat("")
+      //           }
+      //       }
+      //       str =str.concat("\n")
+      //   }
+      //   console.log(str);
+
+      let number = 5;
+      let string = "";
+      for (let i = 1; i <= number; i++) {
+        for (let j = 1; j <= number; j++) {
+          if (i === 1 || i === number) {
+            string += "*";
+          } else if (true) {
+            if (j === 1 || j === number) {
+              string += "*";
+            }
+            else{
+                string += "";
+            }
+          }
+        }
+        string += '\n';
+      }
+      console.log(string)
+    </script>
+  </body>
+</html>
