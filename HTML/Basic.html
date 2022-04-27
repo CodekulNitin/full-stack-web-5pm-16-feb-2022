@@ -8,26 +8,57 @@
     <title>Document</title>
     <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="grid px-32 p-4 shadow  gap-5 mx-44 mt-12 border rounded-lg">
+    <div class="grid md:px-32 px-2 mx-12 p-4 shadow  gap-5 md:mx-44 mt-12 border rounded-lg">
         <input id="email" class="border h-8 pl-2" type="email" placeholder="email">
         <input id="password" class="border h-8 pl-2" type="password" placeholder="Password">
+        
+        <div class="flex space-x-12 items-center">
+            <input id="male" type="radio" name="gender" value="male">Male
+            <input id="female" type="radio" name="gender" value="female">Female
+        </div>
+
         <div class="flex justify-center">
             <button class="px-3 p-1 bg-blue-700 text-white rounded w-32" onclick="submitData()">Submit</button>
         </div>
-        <div>
-            <p id="demo"></p>
-        </div>
+
+    </div>
+    <div class="grid md:px-32 px-2 mx-12 p-4 shadow  gap-5 md:mx-44 mt-12 border rounded-lg">
+        <table>
+            <tr>
+                <th>email</th>
+                <th>password</th>
+                <th>Gender</th>
+            </tr>
+            <tr>
+                <td id="demo"></td>
+                <td id="demo1"></td>
+                <td id="gender"></td>
+
+            </tr>
+        </table>
     </div>
     <script>
-        function submitData (){
+        function submitData() {
             let email = document.getElementById("email").value
             let password = document.getElementById("password").value
-         let obj = JSON.stringify({email:email, password:password})   
-         console.log(obj)
-         document.getElementById("demo").innerHTML = obj;
+            document.getElementById("demo").innerHTML = email;
+            document.getElementById("demo1").innerHTML = password;
+            var ele = document.getElementsByName('gender');
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked)
+                    document.getElementById("gender").innerHTML = "gender" + ele[i].value;
+            }
         }
     </script>
 
