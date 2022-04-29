@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link src="/dist/output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         table,
@@ -15,6 +15,10 @@
         th {
             border: 1px solid black;
         }
+
+        #TableData {
+            display: none;
+        }
     </style>
 </head>
 
@@ -22,10 +26,19 @@
     <div class="grid md:px-32 px-2 mx-12 p-4 shadow  gap-5 md:mx-44 mt-12 border rounded-lg">
         <input id="email" class="border h-8 pl-2" type="email" placeholder="email">
         <input id="password" class="border h-8 pl-2" type="password" placeholder="Password">
-        
+
         <div class="flex space-x-12 items-center">
             <input id="male" type="radio" name="gender" value="male">Male
             <input id="female" type="radio" name="gender" value="female">Female
+        </div>
+
+        <div class="flex space-x-12 items-center">
+            <input id="check1" type="checkbox" value="milk" name="hobbies">milk
+            <input id="check2" type="checkbox" value="tea" name="hobbies">tea
+            <input id="check3" type="checkbox" value="coffee" name="hobbies">coffee
+            <input id="check4" type="checkbox" value="cock" name="hobbies">cock
+            <input id="check5" type="checkbox" value="apple" name="hobbies">apple
+            <input id="check6" type="checkbox" value="mango" name="hobbies">mango
         </div>
 
         <div class="flex justify-center">
@@ -33,17 +46,19 @@
         </div>
 
     </div>
-    <div class="grid md:px-32 px-2 mx-12 p-4 shadow  gap-5 md:mx-44 mt-12 border rounded-lg">
-        <table>
+    <div id="TableData" class="grid md:px-32 px-2 mx-12 p-4 shadow  gap-5 md:mx-44 mt-12 border rounded-lg">
+        <table class="w-full h-auto">
             <tr>
                 <th>email</th>
                 <th>password</th>
                 <th>Gender</th>
+                <th>hobby</th>
             </tr>
             <tr>
                 <td id="demo"></td>
                 <td id="demo1"></td>
                 <td id="gender"></td>
+                <td class="grid" id="hobby"></td>
 
             </tr>
         </table>
@@ -52,13 +67,59 @@
         function submitData() {
             let email = document.getElementById("email").value
             let password = document.getElementById("password").value
+            let TableData = document.getElementById("TableData").style.display = "block"
             document.getElementById("demo").innerHTML = email;
             document.getElementById("demo1").innerHTML = password;
-            var ele = document.getElementsByName('gender');
-            for (i = 0; i < ele.length; i++) {
-                if (ele[i].checked)
-                    document.getElementById("gender").innerHTML = "gender" + ele[i].value;
+            // var ele = document.getElementsByName('gender');
+            // for (i = 0; i < ele.length; i++) {
+            //     if (ele[i].checked)
+            //         document.getElementById("gender").innerHTML = "" + ele[i].value;
+            // }
+
+            let arr = [];
+            let g1 = document.getElementById('male')
+            let g2 = document.getElementById('female')
+            if (g1.checked) {
+                arr.push('male')
             }
+            if (g2.checked) {
+                arr.push('female')
+            }
+            if (arr.length > 0) {
+                document.getElementById("gender").innerHTML = arr;
+            }
+
+
+            let c1 = document.getElementById('check1')
+            let c2 = document.getElementById('check2')
+            let c3 = document.getElementById('check3')
+            let c4 = document.getElementById('check4')
+            let c5 = document.getElementById('check5')
+            let c6 = document.getElementById('check6')
+            let array = [];
+
+            if (c1.checked) {
+                array.push(check1.value)
+            }
+            if (c2.checked) {
+                array.push(check2.value)
+            }
+            if (c3.checked) {
+                array.push(check3.value)
+            }
+            if (c4.checked) {
+                array.push(check4.value)
+            }
+            if (c5.checked) {
+                array.push(check5.value)
+            }
+            if (c6.checked) {
+                array.push(check6.value)
+            }
+            if (array.length > 0) {
+                document.getElementById("hobby").innerHTML = array;
+            }
+
         }
     </script>
 
