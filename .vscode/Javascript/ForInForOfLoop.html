@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         let map = new Map();
+      //         map.set('name','jack');
+      //         map.set("age","27");
+      //         map.set("name1","john")
+      // for(let [key,value] of map){
+      //     console.log(key + "-" +value)
+      // }
+
+      // const student = {
+      // name:"monica",
+      // class:"7",
+      // age:24
+      // }
+      // for (let key in student){
+      //     console.log(`${key} : ${student[key]}`)
+      // }
+
+      // const string = "code"
+      // for(let i in string){
+      //     console.log(string[i])
+      // }
+
+      //output
+      // c
+      // o
+      // d
+      // e
+
+      // const arr = ["hello",1,"javascript"]
+
+      // for(let element of arr){
+      //     console.log(element)
+      // }
+      // const set = new Set([1,2,3])
+      // for(let i of set){
+      //     console.log(i)
+      // }
+
+      // creating iterable object
+
+      const iterableObject = {
+        // iterator  method
+        [Symbol.iterator]() {
+          let step = 0;
+          return {
+            next() {
+              step++;
+              if (step === 1) {
+                return { value: "1", done: false };
+              } else if (step === 2) {
+                return { value: "2", done: false };
+              } else if (step === 3) {
+                return { value: "3", done: false };
+              }
+              return { value: "", done: true };
+            },
+          };
+        },
+      };
+      for (const i of iterableObject){
+          console.log(i)
+      }
+    </script>
+  </body>
+</html>
