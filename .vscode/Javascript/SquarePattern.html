@@ -30,19 +30,20 @@
       for (let i = 1; i <= number; i++) {
         for (let j = 1; j <= number; j++) {
           if (i === 1 || i === number) {
-            string += "*";
+            string += "* &nbsp";
           } else if (true) {
             if (j === 1 || j === number) {
-              string += "*";
+              string += "* &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp";
             }
             else{
                 string += "";
             }
           }
         }
-        string += '\n';
+        string += '<br>';
       }
-      console.log(string)
+      // console.log(string)
+      document.write(string)
     </script>
   </body>
 </html>
