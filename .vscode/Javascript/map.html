@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script>
+//       var el = document.getElementById("root");
+//       var name = "Vivek";
+//       var newName = Array.prototype.map.call(name,function(item){
+//           return item +"A";
+//       })
+// console.log(newName)
+// VV,iI,VV,eE,kK
+
+// function vote(age){
+//     return age >= 18;
+// }
+// function func (){
+//     var filltered = [23,34,28,53,16].filter(vote);
+//     document.write(filltered)
+// }
+
+// func();
+
+// const fruits = ['mango',"apple",'graps','orrange','banana']
+// const Items = (arr,query) => {
+//     return arr.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) !== -1)
+// } 
+// console.log(Items(fruits,'ap'))
+// console.log(Items(fruits,'an'))
+const Array = [-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11]
+function isPrime(num){
+    for(let i=2; i < num; i++){
+        if(num % i == 0)
+            return false;   
+        }
+    return num > 1;
+}
+
+// console.log(array.filter(isPrime))
+const prime= Array.filter(element => isPrime(element))
+console.log(prime)
+
+// const words =["mango","banana","orange","graps","papaya","apple"]
+// const result = words.filter(word => word.length > 5)
+// console.log(result)
+// const elements =(element,index,array)=>{
+//     console.log('a[' + index +'] = ' + elements);
+
+// }
+// [2,4,8].forEach(elements)
+// const words = ["one","two","three","four"]
+// words.forEach((word) => {
+//     console.log(word);
+//     if(word == "two"){
+//         words.shift()
+//     }
+// })
+// console.log(words)
+
+    </script>
+    
+</body>
+</html>

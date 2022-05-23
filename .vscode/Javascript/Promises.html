@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+<div>
+<!--     
+    Assignment 
+lets say you the kid promise your friend that you will
+show then new phone when your mom buys you one.
+
+//output
+    // before asking mom
+    //after asking mom 
+    // hey friends i have new white iphone -->
+    
+</div>
+    <script>
+      var isMomHappy = true;
+
+      //promise 1st 
+      const willGetNewPhone =  new Promise(
+          (resolve,rejected) => {
+              if(isMomHappy){
+                  const phone = {
+                      brand:"Iphone",
+                      color:"white"
+                  };
+                  resolve(phone)
+
+              }else{
+                  const reason = new Error("mom is not happy")
+                  rejected(reason);
+
+              }
+          }
+      )
+      // 2nd promise
+      const showOff = function(phone){
+          const message ="hey friend I have new Phone "
+          + phone.color + " " + phone.brand + "phone"
+          return Promise.resolve(message);
+
+      }
+      // call our Promise
+      const askMom  =  function(){
+          willGetNewPhone
+          .then(showOff)
+          .then(fullfilled => console.log(fullfilled))
+          .catch(error => console.log(erro.message))
+      }
+      askMom();
+
+ 
+
+      //
+    //   var willGetNewPhone = new Promise(function (resolve, reject) {
+    //     if (isMomHappy) {
+    //       var phone = {
+    //         brand: "samsung",
+    //         color: "black",
+    //       };
+    //       resolve(phone); //fullfilled
+    //     } else {
+    //       var reason = new Error("mom is not Happy");
+    //       reject(reason); //reject
+    //     }
+    //   });
+    //   var askMom = function () {
+    //     willGetNewPhone
+    //       .then(function (fullfilled) {
+    //         console.log(fullfilled);
+    //       })
+    //       .catch(function (error) {
+    //         console.log(error.message);
+    //       });
+    //   };
+    //   askMom();
+    </script>
+  </body>
+</html>
