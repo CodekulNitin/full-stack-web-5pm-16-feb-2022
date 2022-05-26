@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="run">Run</button>
+      <pre> previous this actual delay</pre>
+    </div>
+    <div id="log"></div>
+    <script>
+    //   let last = 0;
+    //   let iterations = 10;iterations
+    //   function timeout() {
+    //     logline(new Date().getMilliseconds());
+
+    //     if (iterations-- > 0) {
+    //       setTimeout(timeout, 0);
+    //     }
+    //   }
+    //   function run() {
+    //     const log = document.querySelector("#log");
+    //     while (log.lastElementChild) {
+    //       log.removeChild(log.lastElementChild);
+    //     }
+    //     iterations = 10;
+    //     last = new Date().getMilliseconds();
+
+    //     setTimeout(timeout, 0);
+    //   }
+    //   function pad(number) {
+    //     return number.toString().padStart(3, "0");
+    //   }
+    //   function logline(now) {
+    //     const newLine = document.createElement("pre");
+    //     newLine.textContent = `${pad(last)} ${pad(now)} ${now - last}`;
+    //     document.getElementById("log").appendChild(newLine);
+    //     last = now;
+    //   }
+    //   console.log("#run")
+    //   document.querySelector("#run").addEventListener("click", run);
+
+    let last = 0;
+      let iterations = 10;
+
+      function timeout() {
+        // log the time of this call
+        logline(new Date().getMilliseconds());
+
+        // if we are not finished, schedule the next call
+        if (iterations-- > 0) {
+          setTimeout(timeout, 0);
+        }
+      }
+
+      function run() {
+        // clear the log
+        const log = document.querySelector("#log");
+        while (log.lastElementChild) {
+          log.removeChild(log.lastElementChild);
+        }
+
+        // initialize iteration count and the starting timestamp
+        iterations = 10;
+        last = new Date().getMilliseconds();
+
+        // start timer
+        setTimeout(timeout, 0);
+      }
+
+      function pad(number) {
+        return number.toString().padStart(3, "0");
+      }
+
+      function logline(now) {
+        // log the last timestamp, the new timestamp, and the difference
+        const newLine = document.createElement("pre");
+        newLine.textContent = `${pad(last)}         ${pad(now)}          ${
+          now - last
+        }`;
+        document.getElementById("log").appendChild(newLine);
+        last = now;
+      }
+
+      document.querySelector("#run").addEventListener("click", run);
+
+
+
+      //   setTimeout(() => {
+      //     console.log("this is the first message");
+      //   },5.6* 5000);
+      //   setTimeout(() => {
+      //     console.log("this is the second message");
+      //   },2.5* 3000);
+      //   setTimeout(() => {
+      //     console.log("this is the third message");
+      //   },1.5* 1000);
+
+      //       const myArray= ['zero',"one","two"]
+      //   const myBoundedMethod = (function(sProperty){
+      //       console.log(arguments.length > 0 ? this [sProperty] : this )
+      //   }).bind(myArray)
+      //   myBoundedMethod();
+      //   myBoundedMethod(1);
+      //   setTimeout(myBoundedMethod,1.0*2000);
+    </script>
+  </body>
+</html>

@@ -41,19 +41,33 @@ show then new phone when your mom buys you one.
       )
       // 2nd promise
       const showOff = function(phone){
-          const message ="hey friend I have new Phone "
-          + phone.color + " " + phone.brand + "phone"
+          const message ="hey friend I have new "
+          + phone.color + " " + phone.brand + ""
           return Promise.resolve(message);
 
       }
       // call our Promise
-      const askMom  =  function(){
+      const askMom = function (){
+          console.log('before asking me')
           willGetNewPhone
           .then(showOff)
-          .then(fullfilled => console.log(fullfilled))
-          .catch(error => console.log(erro.message))
+          .then(function (fullfilled) {
+              console.log(fullfilled)
+          })
+          .catch(function (error) {
+              console.log(error.message)
+          })
+          
       }
       askMom();
+      console.log('after asking me')
+    //   const askMom  =  function(){
+    //       willGetNewPhone
+    //       .then(showOff)
+    //       .then(fullfilled => console.log(fullfilled))
+    //       .catch(error => console.log(error.message))
+    //   }
+    //   askMom();
 
  
 
