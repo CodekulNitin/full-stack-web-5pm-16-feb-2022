@@ -9,14 +9,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 border shadow-lg p-5 mt-12 w-full  ">
-        <div class="border shadow h-24 bg-red-800"></div>
-        <div class="border shadow h-24 bg-red-700"></div>
-        <div class="border shadow h-24 bg-red-900"></div>
-        <div class="border shadow h-24 bg-red-600"></div>
-        <div class="border shadow h-24 bg-red-500"></div>
-        <div class="border shadow h-24 bg-red-300"></div>
-        <div class="border shadow h-24 bg-red-200"></div>
+    <!-- <div class="flex border shadow-lg p-5 mt-12 w-full  h-full">
+    <div class="h-full">
+        <img class="h-5/6" src="https://cdn.pixabay.com/photo/2022/05/17/15/59/cat-7203072_960_720.jpg" alt="">
+    </div>
+    <div class="border rounded-lg bg-blue-100 overflow-hidden relative right-12 h-12 mt-5">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt nesciunt minus iste deserunt facere eligendi atque numquam similique, nulla inventore cum reiciendis aliquam corporis suscipit, odit porro quam! Amet, ipsam. Neque hic reprehenderit harum, consequuntur numquam inventore ut nisi ad optio laboriosam perspiciatis, magni iste?
+    </div> -->
+    <form class="grid mx-56" action="abc.jsp" name="myform" method="post" onsubmit="return validateform() ">
+Name: <input class="border" type="text" name="name">
+password: <input class="border" type="password" name="password" id="">
+<input class="border px-3 p-1 bg-blue-700 text-white rounded mt-5" type="submit">
+    </form>
+    <script>
+        function validateform(){
+            var name=document.myform.name.value;
+            var password=document.myform.password.value;
+            if(name == null || name=="")
+            {
+                alert("Name can`t be blank");
+                return false;
+
+            }
+            else if(password.length<6){
+                alert("password must be at least 6 characters long")
+                return false;
+            }
+         
+
+        }
+    </script>
+
     </div> 
 </body>
 </html>

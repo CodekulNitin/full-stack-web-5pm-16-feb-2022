@@ -7,16 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="demo">Good Evening</p>
+    <p id="demo"></p>
     <script>
-      const hour = new Date().getHours();
-      if (hour < 18) {
-        greeting = "Good Day";
-      } else {
-        greeting = "Good Evening";
-      }
-      document.getElementById("demo").innerHTML = greeting;
-      console.log(greeting)
+      const element = document.getElementById("demo");
+      setInterval(function () {
+        element.innerHTML += "hello";
+      }, 1000);
     </script>
   </body>
 </html>

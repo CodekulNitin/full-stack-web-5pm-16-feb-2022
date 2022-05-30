@@ -1,56 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <p id="demo"></p>
     <script>
-            const arr= ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo veritatis amet id numquam! Officiis velit necessitatibus cum voluptas laudantium rem dolor fugit, sequi ex vel aut sapiente, ullam cupiditate quam."];
-          
-            document.getElementById("demo").innerHTML = arr
+    //   document.getElementById("demo").innerHTML = arr;
 
+      let arr = ["rahul", "mohit", "teena", "rohit"];
+      arr.push("kiran", "vaibhav");
+      let removed = arr.pop();
+      let remove = arr.pop();
+      arr.forEach(function (element, index, array) {
+        document.write(element, index, array);
+      });
+      for (i = 0; i < arr.length; i++) {
+        document.write(arr.pop());
+      }
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "splice") {
+          var spliced = arr.splice(i, 1);
+        }
+        document.write("removed elements" + spliced + "<br/>");
+        document.write("remaining elements" + arr);
+      }
 
-            // let arr = ["rahul","mohit","teena","rohit"];
-            // arr.push("kiran","vaibhav")
-            // let removed = arr.pop();
-            // let remove = arr.pop();  
-            // arr.forEach(function(element,index,array){
-            //     document.write(element,index,array);
-            // })
-            // for(i=0; i<arr.length; i++){
-            //     document.write(arr.pop())
-            // }
-            // for( let i=0; i < arr.length; i++){
-            //     if(arr[i] === "splice"){
-            //     var spliced =arr.splice(i,1)
-            // }
-            // document.write("removed elements" + spliced + "<br/>")
-            // document.write("remaining elements" +arr)
-            // }
-
-            // console.log(arr)
-// for (let  i=0; i < arr.length; i++){
-//     const element = arr[i];
-//     console.log(element)
-// }
-// let obj = {
-//     name:"rohit",
-//     age:25,
-//     type:"software developer",
-//     lang:"javascript",
-// }
-// for(let key in obj){
-//     console.log(`The ${key} of Object is ${obj[key]}`)
-// }
-
+      // console.log(arr)
+      // for (let  i=0; i < arr.length; i++){
+      //     const element = arr[i];
+      //     console.log(element)
+      // }
+      // let obj = {
+      //     name:"rohit",
+      //     age:25,
+      //     type:"software developer",
+      //     lang:"javascript",
+      // }
+      // for(let key in obj){
+      //     console.log(`The ${key} of Object is ${obj[key]}`)
+      // }
     </script>
-
-</body>
-
+  </body>
 </html>

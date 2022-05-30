@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="fetchdata">GetDetails</button>
+    <div id="result">
+
+    </div>
+    <script>
+        const fetchDataBtn=document.querySelector("#fetchdata");
+        const result = document.querySelector("#result")
+
+        async function getData(){
+            result.innerText = "Loading....";
+            try{
+                const res = await
+                fetch("https://api.github.com/users/gulshansainis");
+                const jsonResult=await res.json();
+                result.innerText = JSON.stringify(jsonResult,null,2)
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        fetchDataBtn.addEventListener("click",getData)
+    </script>
+</body>
+</html>
