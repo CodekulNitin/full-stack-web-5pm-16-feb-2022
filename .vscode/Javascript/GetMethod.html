@@ -7,40 +7,30 @@
     <title>Document</title>
   </head>
   <body>
-    <div>
-      <article>
-        <h2>{{title}}</h2>
-        <img
-          src="https://media.giphy.com/media/{{id}}/giphy.gif"
-          alt="{{title}}"
-        />
-      </article>
-    </div>
+    <main>
+      <a href="https://dog.ceo/dog-api/">Dog API</a>.
+      <img
+      height="300"
+        src="https://images.dog.ceo/breeds/redbone/n02090379_3899.jpg"
+        id="myImage"
+      /><br />
+
+      <button>Get Random Dog Image</button>
+    </main>
     <script>
-      (function () {
-        const main = document.querySelector("main"),
-          template = document.querySelector("#template"),
-          source = template.innerHTML,
-          compile = Handlebars.compile(source),
-          endpoint = "https://api.giphy.com/v1/gifs/search?q=";
-        topic = "kitchen",
-          key = "jhcL7QPGbrOHw1dEJuL9w2j71zfEk",
-          limit = "50",
-          url = `${endpoint}${topic}&api_key=${key}&limit=${limit}`;
-
-        fetch(url)
-          .then(response => response.json())
-          .then(data => render(data.data))
-          .catch(err => console.error(err));
-
-        //render
-        function render(data) {
-          data.forEach((item, i) => {
-            let html = compile(item);
-            main.insertAdjacentHTML("beforeend", html);
-          });
-        }
-      })();
+      document.querySelector("button").addEventListener(
+        "click",
+        function () {
+          fetch("https://dog.ceo/api/breeds/image/random")
+            .then((response) => {
+              return response.json();
+            })
+            .then((myContent) => {
+              myImage.src = myContent["message"];
+            });
+        },
+        false
+      );
     </script>
   </body>
 </html>
