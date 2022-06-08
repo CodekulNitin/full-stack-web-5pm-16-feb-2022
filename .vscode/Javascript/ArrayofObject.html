@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link src="/dist/output.css" rel="stylesheet">
+    <link src="/dist/output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-
   </head>
-  <body>
-    <div class="grid grid-cols-3 gap-4 border rounded shadow" id="card"></div>
+  <body> 
+    <div class=" border rounded shadow" >  
+      <section class="border grid grid-cols-3" id="card">
+
+      </section>
+    </div>
     <script>
       const data = [
         {
@@ -34,27 +37,27 @@
           output: 2,
         },
       ];
- data.forEach(res => {
-     let card = document.createElement("div")
-     let name = document.createTextNode("name" + res.title + ',')
-     card.appendChild(name)
-     
-     let conatainer = document.querySelector("#card");
-     conatainer.appendChild(card)
- })
+      data.forEach((res) => {
+        let card = document.createElement("div");
+        let name = document.createTextNode("name" + res.title + ",");
+        card.appendChild(name);
 
-    //   const container = document.getElementById("card");
-    //   data.forEach((result, idx) => {
-    //     const card = document.createElement("div");
-    //     card.classList = "card-body";
+        let conatainer = document.querySelector("#card");
+        conatainer.appendChild(card);
+      });
 
-    //     const content = `
-    //         <div class="cards" id="heading-${idx}">
-    //             <h1>${result.title}</h1>
+      //   const container = document.getElementById("card");
+      //   data.forEach((result, idx) => {
+      //     const card = document.createElement("div");
+      //     card.classList = "card-body";
 
-    //             </div>
-    //         `;
-    //   });
+      //     const content = `
+      //         <div class="cards" id="heading-${idx}">
+      //             <h1>${result.title}</h1>
+
+      //             </div>
+      //         `;
+      //   });
     </script>
   </body>
 </html>

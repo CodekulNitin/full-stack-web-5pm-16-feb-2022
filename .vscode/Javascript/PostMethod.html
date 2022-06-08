@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre id="json">
+
+    </pre>
+    <script>
+        axios.post(
+            "https://httpbin.org/post",
+            {
+                codes:"IN",
+                param1:"param1",
+                param2:"param2",
+                date: new Data().toISOString().slice(0,10)
+            },
+            {
+                headers:{
+                    "Content-Type":"Application/json",
+                    Authorization:"JWT fefege....."
+                }
+            }
+        )
+        .then(function(response){
+            data.JSON.stringify(response,undefined,2)
+            data = data.replace(/&(?!amp)/g,"&amp");
+            console.log(data)
+            document.getElementById("json").innerHTML = data;
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+
+    </script>
+    
+</body>
+</html>

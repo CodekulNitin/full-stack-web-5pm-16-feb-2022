@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        radius = [2,5,7,9]
+
+        const Area = function(radius){
+            return Math.PI * radius * radius
+        }
+        const CircumFerence = function(radius){
+            return 2* Math.PI * radius
+        }
+        const Diameter = function(radius){
+            return 2* radius
+        }
+
+        const calculate = function (radius,logic){
+            output = []
+            for(let i=0; i<radius.length; i++){
+                output.push(logic(radius[i]))
+            }
+            return output;
+
+        }
+        console.log(calculate(radius,Area))
+        console.log(calculate(radius,CircumFerence))
+        console.log(calculate(radius,Diameter))
+
+
+    </script>
+    
+</body>
+</html>
