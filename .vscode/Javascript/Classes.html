@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p id="demo"></p>
+    </div>
+    <script>
+    //   class Car {
+    //     constructor(name, year) {
+    //       this.name = name;
+    //       this.year = year;
+    //     }
+    //   }
+    //   const myCar = new Car("Ford", 2014);
+    //   document.getElementById("demo").innerHTML = myCar.name + "" + myCar.year;
+
+    let Rectangle = class {
+        constructor(height,width)
+        {
+            this.height = height;
+            this.width = width;
+        }
+        //
+        get area () {
+            return this.calcArea();
+
+        }
+        //method
+        calcArea() {
+            return this.height * this.width
+        }
+    };
+    const square = new 
+    Rectangle(10,10)
+    console.log(square.area);
+
+   
+    </script>
+  </body>
+</html>
